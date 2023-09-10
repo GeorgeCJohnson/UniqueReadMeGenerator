@@ -2,6 +2,19 @@
 const questions = [
     {
         type: 'input',
+        name: 'github',
+        message: 'What is your GitHub username? (Required)',
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please enter your GitHub username!');
+                return false;
+            }
+        }          
+    },
+    {
+        type: 'input',
         name: 'title',
         message: 'What is the title of your project? (Required)',
         validate: titleInput => {
@@ -55,3 +68,40 @@ const questions = [
     {
         type: 'input',
         name: 'contribution',
+        message: 'Please enter contribution guidelines for your project. (Required)',
+        validate: contributionInput => {
+            if (contributionInput) {
+                return true;
+            } else {
+                console.log('Please enter contribution guidelines for your project!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Please enter test instructions for your project. (Required)',
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            } else {
+                console.log('Please enter test instructions for your project!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Please select a license for your project. (Required)',
+        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
+        validate: licenseInput => {
+            if (licenseInput) {
+                return true;
+            } else {
+                console.log('Please select a license for your project!');
+                return false;
+            }
+        }
+    },
