@@ -3,7 +3,29 @@
 function renderLicenseBadge(license)  if (!license) {
   return '';
 } else {
-  return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  let licenseEndpoint;
+  let licenseColor;
+  if (license === "Eclipse") {
+    licenseEndpoint = "epl-1-0";
+    licenseColor = "red";
+  } else if (license === "Apache") {
+    licenseEndpoint = "Apache-2.0";
+    licenseColor = "blue";
+  } else if (license === "GNU GPL") {
+    licenseEndpoint = "gpl-3.0";
+    licenseColor = "blue";
+  } else if (license === "MIT") {
+    licenseEndpoint = "MIT";
+    licenseColor = "yellow";
+  } else if (license === "Mozilla") {
+    licenseEndpoint = "MPL-2.0";
+    licenseColor = "brightgreen";
+  } else {
+    licenseEndpoint = "";
+    licenseColor = "";
+  }
+  return `[![${license}](https://img.shields.io/badge/License-${license}-${licenseColor}.svg)](https://opensource.org/license/${licenseEndpoint})`;
+}
 }; 
 
 // TODO: Create a function to generate markdown for README
