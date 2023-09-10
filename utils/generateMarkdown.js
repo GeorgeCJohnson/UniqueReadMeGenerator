@@ -1,6 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 //Badge return for either no license or license
-function renderLicenseBadge(license)  if (!license) {
+function renderLicenseBadge(license)  {
+  if (!license) 
+  {
   return '';
 } else {
   let licenseEndpoint;
