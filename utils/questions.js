@@ -119,3 +119,7 @@ const questions = [
         }
     }
 ];
+
+
+//Exporting questions
+module.exports = questions; 
