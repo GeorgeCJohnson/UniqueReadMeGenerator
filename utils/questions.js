@@ -120,6 +120,28 @@ const questions = [
     }
 ];
 
+// Checks for the file location.  Assistance received from Nina Mahdawe on this function.
+function writeToFile(fileLocation, data) {
+    if (fileLocation.charAt(fileLocation.length - 1) !== "/") {
+        fileLocation += "/"
+    }
+    fs.writeFileSync(`${fileLocation}README.md`, data)
+
+}
+
+// TODO: Create a function to initialize app
+async function init() {
+    console.log("Welcome to the README generator!")
+    const answers = await askQuestions()
+    const markDown = generateMarkdown(answers)
+    console.log(markDown)
+    writeToFile(answers.location, markDown)
+}
+async function askQuestions() {
+    const answers = await inquirer.prompt(questions)
+    console.log(answers)
+    return answers;
+}
 
 //Exporting questions
 module.exports = questions; 
