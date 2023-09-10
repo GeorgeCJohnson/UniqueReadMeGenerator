@@ -9,7 +9,7 @@ const questions = require('./utils/questions.js');
 // const questions = [];
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
 //Initializes the questions
 function init() {
     inquirer.prompt(questions).then((answers) => {
