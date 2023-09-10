@@ -10,7 +10,30 @@ function renderLicenseBadge(license)  if (!license) {
 //Returning user input from questions.js
 function generateMarkdown(data) {
   return `# ${data.title}
-
+## License:
+${renderLicenseBadge(data.license)}
+## Table of Contents:
+  ### [Table of Contents](#table-of-contents)
+  ### [Description](#description)
+  ### [Installation](#installation)
+  ### [Usage](#usage)
+  ### [Contribution](#contribution)
+## Description:
+  ### ${data.description}   
+## Installation:
+  ### ${data.installation}
+## Usage:
+  ### ${data.usage}
+## Tests:
+  ### ${data.tests}
+## Contribution:
+  ### ${data.contribution}
+## GitHub:
+  ### ${data.github}
+## Questions:
+  ### You can contact me at 
+  ${data.email}        
+} for any questions or comments.
 `;
 }
 
